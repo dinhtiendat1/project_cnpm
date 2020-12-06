@@ -33,17 +33,21 @@ namespace QuanLyGaraOto2.Controllers
             if (phieuSuaChua.FirstOrDefault(m => m.MaDV_LK == id) == null)
             {
                 DICHVU_LINHKIEN dV_LK = db.DICHVU_LINHKIEN.Find(id);
-                CT_PHIEUSUACHUA cT_PHIEUSUACHUA = new CT_PHIEUSUACHUA()
-                {
-                    MaDV_LK = id,
-                    SoLuong = 1,
-                };
+                CT_PHIEUSUACHUA cT_PHIEUSUACHUA = new CT_PHIEUSUACHUA();
+                
+                cT_PHIEUSUACHUA.MaDV_LK = id;
+                cT_PHIEUSUACHUA.SoLuong = 1;
+                cT_PHIEUSUACHUA.ThanhTien = (double)((double)cT_PHIEUSUACHUA.SoLuong * dV_LK.DonGia);
+                
                 phieuSuaChua.Add(cT_PHIEUSUACHUA);
             }
             else
             {
+                DICHVU_LINHKIEN dV_LK = db.DICHVU_LINHKIEN.Find(id);
                 CT_PHIEUSUACHUA cT_PHIEUSUACHUA = phieuSuaChua.FirstOrDefault(m => m.MaDV_LK == id);
                 cT_PHIEUSUACHUA.SoLuong++;
+                cT_PHIEUSUACHUA.ThanhTien = (double)(cT_PHIEUSUACHUA.ThanhTien + dV_LK.DonGia);
+                
             }
             return RedirectToAction("SessionCreate", "PhieuSuaChuas");
         }

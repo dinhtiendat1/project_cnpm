@@ -42,6 +42,48 @@ namespace QuanLyGaraOto2.Controllers
             ViewBag.BienSo = new SelectList(db.XEs, "BienSo","BienSo");
             return View();
         }
+
+        //Thêm phiếu sữa chữa vào csdl
+        public ActionResult LuuPhieuSuaChuaVaoCSDL()
+        {
+            List<CT_PHIEUSUACHUA> phieuSuaChua = Session["PhieuSuaChua"] as List<CT_PHIEUSUACHUA>;
+            string bienSo = Session["BienSo"].ToString();
+            PHIEUSUACHUA pHIEUSUACHUA = new PHIEUSUACHUA()
+            {
+                BienSo = bienSo,
+                NgayTiepNhanXe = DateTime.Now,
+                NgaySuaChua = DateTime.Now,
+                SoTienThu = 0,
+            };
+            db.PHIEUSUACHUAs.Add(pHIEUSUACHUA);
+            db.SaveChanges();
+            double TienNo = 0;
+            foreach(var item in phieuSuaChua)
+            {
+                CT_PHIEUSUACHUA cT_PHIEUSUACHUA = new CT_PHIEUSUACHUA()
+                {
+                    MaPhieuSC = pHIEUSUACHUA.MaPhieuSC,
+                    MaDV_LK = item.MaDV_LK,
+                    SoLuong = item.SoLuong,
+                    ThanhTien = item.ThanhTien                    
+                };
+                db.CT_PHIEUSUACHUA.Add(cT_PHIEUSUACHUA);
+                db.SaveChanges();
+                TienNo = TienNo + cT_PHIEUSUACHUA.ThanhTien;
+            }
+            
+            XE xe = db.XEs.FirstOrDefault(x => x.BienSo==bienSo);
+            
+            xe.TienNo = TienNo;
+            db.Entry(xe).State = EntityState.Modified;
+            
+            db.SaveChanges();
+            Session.Remove("PhieuSuaChua");
+            Session.Remove("Xe");   
+            Session.Remove("bienSo");
+            return RedirectToAction("index", "PhieuSuaChuas");
+        }
+
         [HttpPost]
         public ActionResult CreateSessionXe(string bienSo)
         {
