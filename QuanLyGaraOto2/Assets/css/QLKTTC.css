@@ -1,0 +1,87 @@
+/*---------------------------header---------------------------*/
+#menu-container{
+    width: 100%;
+    padding: 0 3%;
+    background-color: white;
+    height: 100px;
+    box-shadow: 0px 1px 5px;
+}
+#menu-container #menu>ul{
+
+    height: 100px;
+    line-height: 100px;
+}
+#menu-container #menu>ul>li>a{
+    height: 100px;
+    line-height: 70px;
+    color:black;
+    font-size: 25px;
+    text-align: center;
+}
+#menu-container #menu>ul>li>#QL-Kho{
+    width: 265px;
+}
+#menu-container #menu>ul>li>#QLKD{
+    width: 297px;
+}
+#menu-container #menu>ul>li>a>i{
+    font-size: 50px;
+    line-height: 70px;
+}
+#menu-container #menu>ul>li>ul>li>a{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+}
+#menu-container #menu>ul>li>#dropdown_xuong>li>a{
+    width: 210px;
+}
+
+
+/*---------------------------main---------------------------*/
+
+main{
+    min-height: 250px;
+    margin-top: 200px;
+    padding: 35px 11%;
+    padding-top: 35px;
+}
+
+/*---------------------------footer---------------------------*/
+
+footer{
+    min-height: 250px;
+    margin-top: 100px;
+    padding: 35px 11%;
+    background-color: #222222;
+    padding-top: 35px;
+    color:#FFFFFF;
+}
+footer #footer-container .row #footer-col-1 h5{
+    font-size: 30px;
+}
+footer #footer-container .row #footer-col-1 ul li{
+    list-style-type: none;
+}
+footer #footer-container .row #footer-col-2 img{
+    margin:10% 5%;
+    width: 50%;
+}
+footer #footer-container .row #footer-col-3 .social-networks ul li{
+    list-style-type: none;
+    display: inline-block;
+}
+footer #footer-container .row #footer-col-3 .social-networks ul li a .fa{
+    margin-right: 20px;
+    color: white;
+    font-size: 30px;
+}
+footer #footer-container .row #footer-col-3 #footer-col-3__row-1 ul li{
+    list-style-type: none;
+    display: inline-block;
+    padding:0 10px 5px 0 ;
+}
+footer #footer-container .row #footer-col-3 #footer-col-3__row-1 ul li a{
+    color:white;
+}

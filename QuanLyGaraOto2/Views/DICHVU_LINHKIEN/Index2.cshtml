@@ -1,0 +1,42 @@
+﻿@model IEnumerable<QuanLyGaraOto2.Models.DICHVU_LINHKIEN>
+
+@{
+    ViewBag.Title = "Index2";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Index2</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+   
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDV_LK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDV_LK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Thêm vào phiếu sửa chữa", "ThemVaoPhieuSC_Session", new { id=item.MaDV_LK }) |
+
+        </td>
+    </tr>
+}
+
+</table>

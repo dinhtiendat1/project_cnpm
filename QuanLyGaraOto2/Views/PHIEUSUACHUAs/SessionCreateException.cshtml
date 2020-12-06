@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "SessionCreateException";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>SessionCreateException</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th colspan="2">
+            Tên chủ xe: @ViewBag.Xe.TenChuXe
+        </th>
+
+        <th colspan="2">
+            Biển số:  @ViewBag.Xe.BienSo
+        </th>
+
+    </tr>
+</table>
+    
+        <h4>@ViewBag.Message. <a href="@Url.Action("index2","dichvu_linhkien")">Thêm dịch vụ/linh kiện vào phiếu sửa chữa</a></h4>
+
+

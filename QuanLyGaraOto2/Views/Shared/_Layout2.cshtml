@@ -1,0 +1,139 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../Assets/css/TrangChu.css">
+    <title>Quản lý tài chính - kế toán</title>
+    <link rel="icon" href="../Assets/picture/icon.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar  navbar-fixed-top">
+            <div class="container" id="menu-container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="TrangChu.html"> <img src="../Assets/picture/FastLeopard.png" alt=""></a>
+                </div>
+                <div id="menu" class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="@Url.Action("index")">Trang chủ</a></li>
+
+                        <li class="dropdown">
+                            <a href="QLKho.html" id="QL-Kho">Quản lý kho</a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="">Quản lý xưởng<span class="caret"></span></a>
+                            <ul class="dropdown-menu navbar">
+                                <li><a href=@Url.Action("create", "xes")>Nhập thông tin xe mới</a></li>
+                                <li><a href="@Url.Action("index", "xes")">Xe đang trong xưởng</a></li>
+                                @if (Session["Xe"] == null)
+                                {
+                                    <li><a href="@Url.Action("create","Phieusuachuas")">Tạo phiếu sửa chữa</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="@Url.Action("create","Phieusuachuas")">Phiếu sửa chữa cho @Session["bienSo"]</a></li>
+                                }
+                            </ul>
+                        </li>
+
+                        <li><a href="QLKTTC.html">Quản lý kế toán tài chính</a></li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="" id="QLKD">Quản lý kinh doanh <span class="caret"></span></a>
+                            <ul class="dropdown-menu navbar">
+                                <li><a href="QLKD.html">Danh sách hóa đơn sửa ô tô</a></li>
+                                <li><a href="DichVu.html">Dịch vụ</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="#"><i class="fa fa-user-circle-o" aria-hidden="true"></i></a>
+                            <ul class="dropdown-menu navbar-left">
+                                <li><a data-toggle="modal" data-target="#myModal" href="">Đăng nhập</a></li>
+                                <li><a href="BaoCao.html">Báo cáo</a></li>
+                                <li><a href="TaiKhoan.html">Danh sách tài khoản</a></li>
+                                <li><a href="DichVu.html">Danh sách quy định</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+    </header>
+
+
+
+    <main>
+        <div id="container-main">
+            @RenderBody()
+        </div>
+    </main>
+
+
+    <footer id="myFooter">
+        <div class="container1" id="footer-container">
+            <div class="row">
+                <div class="col-sm-5" id="footer-col-1">
+                    <h5>Gara ô tô Fast Leopard</h5>
+                    <ul>
+                        <li>Chịu trách nhiệm nội dung: Đinh Tiến Đạt</a></li>
+                        <li>Giấy phép MXH số 451/GP-BTTTT do Bộ TTTT cấp ngày 25/09/2020</li>
+                        <li>Địa điểm: 155 Sư Vạn Hạnh, Phường 1, Quận 10, TP. HCM</li>
+                        <li>Văn phòng: Lầu 3, 57 Cao Thắng, Phường 3, Quận 10, TP. HCM</li>
+                        <li>Hotline: 090 44 15677</li>
+                        <li>Email: fastleopard@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-sm-4" id="footer-col-2">
+                    <img src="../Assets/picture/BoCongThuong.png" alt="">
+                </div>
+                <div class="col-sm-3" id="footer-col-3">
+                    <div class="social-networks">
+                        <ul>
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+                            <li><a href="#" class="google"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+
+
+
+
+                    </div>
+                    <div class="col-sm" id="footer-col-3__row-1">
+                        <ul>
+                            <li><a href="#">Trang chủ</a></li>
+                            <li><a href="#">Quản lý kho</a></li>
+                            <li><a href="#">Quản lý xưởng</a></li>
+                            <li><a href="#">Quản lý kế toán tài chính</a></li>
+                            <li><a href="#">Quản lý kinh doanh</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2020 Copyright Fast Leopard </p>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="../Assets/js/Dang-nhap.js"></script>
+</body>
+</html>
+

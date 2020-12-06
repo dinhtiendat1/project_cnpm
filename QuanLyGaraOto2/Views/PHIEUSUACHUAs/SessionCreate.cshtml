@@ -1,0 +1,67 @@
+﻿
+
+@{
+    ViewBag.Title = "SessionCreate";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+
+
+
+@*
+        <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+*@
+
+<table class="table" border="1">
+    <tr>
+        <th colspan="2">
+            Tên chủ xe: @ViewBag.Xe.TenChuXe
+        </th>
+
+        <th colspan="2">
+            Biển số:  @ViewBag.Xe.BienSo
+        </th>
+
+    </tr>
+
+
+    <tr>
+        <th>
+            Tên dịch vụ/linh kiện
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn giá
+        </th>
+        <th>
+            Thành tiền
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in
+        (dynamic)ViewData["data"])
+    {
+        <tr>
+            <td>
+                @item.TenDV_LK
+            </td>
+            <td>
+                @item.SoLuong
+            </td>
+            <td>
+                @item.DonGia
+            </td>
+            <td>
+                @item.ThanhTien
+            </td>
+        </tr>
+    }
+
+
+</table>
+<h4>@ViewBag.Message. <a href="@Url.Action("index2","dichvu_linhkien")">Thêm dịch vụ/linh kiện vào phiếu sửa chữa</a></h4>
