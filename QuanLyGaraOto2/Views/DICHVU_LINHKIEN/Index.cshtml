@@ -5,10 +5,7 @@
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<br />
-<br />
-<h1>Danh sách linh kiện</h1>
-<br />
+<h2>Index</h2>
 
 
 <table class="table">
@@ -22,27 +19,25 @@
         <th>
             @Html.DisplayNameFor(model => model.SoLuongTonKho)
         </th>
-        <th>
-            Điều chỉnh
-        </th>
+        <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenDV_LK)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DonGia)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoLuongTonKho)
-            </td>
-            <td>
-                <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Edit",new { id = item.MaDV_LK })';return false;"><i class="fa fa-wrench" aria-hidden="true"></i></button>
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDV_LK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongTonKho)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaDV_LK }) 
+            
+        </td>
+    </tr>
+}
 
 </table>

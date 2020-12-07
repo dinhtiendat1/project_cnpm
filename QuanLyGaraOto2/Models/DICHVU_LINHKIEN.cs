@@ -1,8 +1,7 @@
-﻿namespace QuanLyGaraOto2.Models
+namespace QuanLyGaraOto2.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -20,13 +19,10 @@
         public int MaDV_LK { get; set; }
 
         [StringLength(50)]
-        [DisplayName("Tên dịch vụ, linh kiện")]
         public string TenDV_LK { get; set; }
 
-        [DisplayName("Đơn giá")]
         public double? DonGia { get; set; }
 
-        [DisplayName("Số lượng tồn kho")]
         public int? SoLuongTonKho { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

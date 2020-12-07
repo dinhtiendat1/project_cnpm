@@ -2,7 +2,6 @@ namespace QuanLyGaraOto2.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -19,7 +18,6 @@ namespace QuanLyGaraOto2.Models
         [Key]
         public int MaBCTK { get; set; }
 
-        [DisplayName("Thaìng")]
         public int Thang { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

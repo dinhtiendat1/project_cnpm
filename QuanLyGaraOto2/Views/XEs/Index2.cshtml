@@ -5,10 +5,8 @@
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<br />
-<br />
-<h1>Xe đang có trong xưởng</h1>
-<br />
+<h2>XE ĐANG CÓ TRONG XƯỞNG</h2>
+
 
 <table class="table">
     <tr>
@@ -30,34 +28,29 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.HIEUXE.TenHX)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenChuXe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiaChi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DienThoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TienNo)
-            </td>
-            <td>
-                <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Details",new { id = item.BienSo })';return false;" style="width:30px"><i class="fa fa-info" aria-hidden="true"></i></button>
-                <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Edit",new { id = item.BienSo })';return false;"><i class="fa fa-wrench" aria-hidden="true"></i></button>
-                <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Delete",new { id = item.BienSo })';return false;"><i class="fa fa-minus" aria-hidden="true"></i></button>
-
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.BienSo }) |
-                @Html.ActionLink("Details", "Details", new { id = item.BienSo }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BienSo })*@
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HIEUXE.TenHX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenChuXe)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DienThoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TienNo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BienSo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BienSo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BienSo })
+        </td>
+    </tr>
+}
 
 </table>

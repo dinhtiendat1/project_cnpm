@@ -1,8 +1,7 @@
-﻿namespace QuanLyGaraOto2.Models
+namespace QuanLyGaraOto2.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -19,7 +18,6 @@
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Ma_PhieuNLK { get; set; }
 
-        [DisplayName("Số lượng")]
         public int SoLuong { get; set; }
 
         public virtual PHIEUNHAPLINHKIEN PHIEUNHAPLINHKIEN { get; set; }

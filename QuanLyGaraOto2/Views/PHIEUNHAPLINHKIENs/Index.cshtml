@@ -30,13 +30,9 @@
             @Html.DisplayFor(modelItem => item.NgayNhap)
         </td>
         <td>
-            <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Details",new { id = item.Ma_PhieuNLK })';return false;" style="width:30px"><i class="fa fa-info" aria-hidden="true"></i></button>
-            <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Edit",new { id = item.Ma_PhieuNLK })';return false;"><i class="fa fa-wrench" aria-hidden="true"></i></button>
-            <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Delete",new { id = item.Ma_PhieuNLK })';return false;"><i class="fa fa-minus" aria-hidden="true"></i></button>
-
-            @*@Html.ActionLink("Edit", "Edit", new { id = item.Ma_PhieuNLK }) |
-            @Html.ActionLink("Details", "Details", new { id = item.Ma_PhieuNLK }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.Ma_PhieuNLK })*@
+            @Html.ActionLink("Edit", "Edit", new { id=item.Ma_PhieuNLK }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Ma_PhieuNLK }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Ma_PhieuNLK })
         </td>
     </tr>
 }

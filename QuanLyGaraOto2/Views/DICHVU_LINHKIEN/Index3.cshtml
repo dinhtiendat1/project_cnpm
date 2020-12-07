@@ -4,9 +4,9 @@
     ViewBag.Title = "Index3";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-<br /><br />
-<h1>Linh kiện sắp hết</h1>
-<br />
+
+<h2>Index3</h2>
+
 
 <table class="table">
     <tr>
@@ -19,9 +19,7 @@
         <th>
             @Html.DisplayNameFor(model => model.SoLuongTonKho)
         </th>
-        <th>
-            Điều chỉnh
-        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -36,8 +34,7 @@
             @Html.DisplayFor(modelItem => item.SoLuongTonKho)
         </td>
         <td>
-            <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Edit",new { id = item.MaDV_LK })';return false;"><i class="fa fa-wrench" aria-hidden="true"></i></button>
-
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaDV_LK }) 
         </td>
     </tr>
 }

@@ -16,16 +16,16 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="~/Assets/css/TrangChu.css">
+    <link rel="stylesheet" href="../Assets/css/TrangChu.css">
     <title>Quản lý tài chính - kế toán</title>
-    <link rel="icon" href="~/Assets/picture/icon.png">
+    <link rel="icon" href="../Assets/picture/icon.png">
 </head>
 <body>
     <header>
         <nav class="navbar  navbar-fixed-top">
             <div class="container" id="menu-container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="TrangChu.html"> <img src="~/Assets/picture/FastLeopard.png" alt=""></a>
+                    <a class="navbar-brand" href="TrangChu.html"> <img src="../Assets/picture/FastLeopard.png" alt=""></a>
                 </div>
                 <div id="menu" class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
@@ -33,7 +33,7 @@
 
                         <li class="dropdown">
                             <a href="" data-toggle="dropdown">Quản lý kho<span class="caret"></span></a>
-                            <ul class="dropdown-menu navbar-left">
+                            <ul class="dropdown-menu navbar">
                                 <li><a href=@Url.Action("index", "Dichvu_linhkien")>Danh sách linh kiện</a></li>
                                 <li><a href="@Url.Action("index3", "dichvu_linhkien")">Linh kiện sắp hết</a></li>
                                 @if (Session["NhaCungCap"] == null)
@@ -42,7 +42,7 @@
                                 }
                                 else
                                 {
-                                    <li><a href="@Url.Action("create","PhieuNhapLinhKiens")">Phiếu nhập linh kiện</a></li>
+                                    <li><a href="">Phiếu nhập linh kiện</a></li>
                                 }
                                 
                             </ul>
@@ -50,7 +50,7 @@
 
                         <li class="dropdown">
                             <a data-toggle="dropdown" href="">Quản lý xưởng<span class="caret"></span></a>
-                            <ul class="dropdown-menu navbar-left">
+                            <ul class="dropdown-menu navbar">
                                 <li><a href=@Url.Action("create", "xes")>Nhập thông tin xe mới</a></li>
                                 <li><a href="@Url.Action("index", "xes")">Xe từng vào xưởng</a></li>
                                 <li><a href="@Url.Action("index2", "xes")">Xe đang trong xưởng</a></li>
@@ -74,7 +74,7 @@
                         </li>
                         <li class="dropdown">
                             <a data-toggle="dropdown" href="" id="QLKD">Quản lý kinh doanh <span class="caret"></span></a>
-                            <ul class="dropdown-menu navbar-left">
+                            <ul class="dropdown-menu navbar">
                                 <li><a href="QLKD.html">Danh sách hóa đơn sửa ô tô</a></li>
                                 <li><a href="DichVu.html">Dịch vụ</a></li>
                             </ul>

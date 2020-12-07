@@ -7,13 +7,12 @@
 
 
 <br />
-@using (Html.BeginForm())
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
-
+    
 <div class="form-horizontal">
-    <br />
-    <h1>Nhập xe mới vào xưởng</h1>
+    <h4 style="text-align:center">NHẬP XE MỚI VÀO XƯỞNG</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
@@ -66,16 +65,14 @@
     *@
 
 
-
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <button class="btn btn-danger" onclick="location.href='@Url.Action("Index")';return false;">Trở về</button>
-            <input type="submit" value="Thêm xe" class="btn btn-success" />
+        <div class=" col-md-10">
+            <input type="submit" value="Thêm" class="btn btn-primary pull-right" />
         </div>
     </div>
-</div>}
+</div>
+}
 
-<br />
-@*<div>
+<div>
     @Html.ActionLink("Back to List", "Index")
-</div>*@
+</div>

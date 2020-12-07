@@ -212,6 +212,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
     <Content Include="Views\XEs\Create.cshtml" />
@@ -246,7 +247,6 @@
     <Content Include="Views\PHIEUNHAPLINHKIENs\PhieuNhapLinhKien.cshtml" />
     <Content Include="Views\DICHVU_LINHKIEN\Index3.cshtml" />
     <Content Include="Views\XEs\Index2.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -59,7 +59,7 @@ namespace QuanLyGaraOto2.Controllers
         }
         public ActionResult Index2()
         {
-            return View(db.DICHVU_LINHKIEN.ToList());
+            return View(db.DICHVU_LINHKIEN.Where(m =>m.SoLuongTonKho>0).ToList());
         }
         // GET: DICHVU_LINHKIEN/Details/5
         public ActionResult Details(int? id)
