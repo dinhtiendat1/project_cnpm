@@ -29,17 +29,31 @@
                 </div>
                 <div id="menu" class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="@Url.Action("index")">Trang chủ</a></li>
+                        <li><a href="@Url.Action("index","home")">Trang chủ</a></li>
 
                         <li class="dropdown">
-                            <a href="QLKho.html" id="QL-Kho">Quản lý kho</a>
+                            <a href="" data-toggle="dropdown">Quản lý kho<span class="caret"></span></a>
+                            <ul class="dropdown-menu navbar">
+                                <li><a href=@Url.Action("index", "Dichvu_linhkien")>Danh sách linh kiện</a></li>
+                                <li><a href="@Url.Action("index3", "dichvu_linhkien")">Linh kiện sắp hết</a></li>
+                                @if (Session["NhaCungCap"] == null)
+                                {
+                                    <li><a href="@Url.Action("create","PhieuNhapLinhKiens")">Tạo phiếu nhập linh kiện</a></li>
+                                }
+                                else
+                                {
+                                    <li><a href="">Phiếu nhập linh kiện</a></li>
+                                }
+                                
+                            </ul>
                         </li>
 
                         <li class="dropdown">
                             <a data-toggle="dropdown" href="">Quản lý xưởng<span class="caret"></span></a>
                             <ul class="dropdown-menu navbar">
                                 <li><a href=@Url.Action("create", "xes")>Nhập thông tin xe mới</a></li>
-                                <li><a href="@Url.Action("index", "xes")">Xe đang trong xưởng</a></li>
+                                <li><a href="@Url.Action("index", "xes")">Xe từng vào xưởng</a></li>
+                                <li><a href="@Url.Action("index2", "xes")">Xe đang trong xưởng</a></li>
                                 @if (Session["Xe"] == null)
                                 {
                                     <li><a href="@Url.Action("create","Phieusuachuas")">Tạo phiếu sửa chữa</a></li>
@@ -51,7 +65,13 @@
                             </ul>
                         </li>
 
-                        <li><a href="QLKTTC.html">Quản lý kế toán tài chính</a></li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" href="">Quản lý kế toán tài chính <span class="caret"></span></a>
+                            <ul class="dropdown-menu navbar">
+                               
+
+                            </ul>
+                        </li>
                         <li class="dropdown">
                             <a data-toggle="dropdown" href="" id="QLKD">Quản lý kinh doanh <span class="caret"></span></a>
                             <ul class="dropdown-menu navbar">

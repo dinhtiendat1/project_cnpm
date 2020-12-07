@@ -19,7 +19,13 @@ namespace QuanLyGaraOto2.Controllers
         {
             return View(db.DICHVU_LINHKIEN.ToList());
         }
-        
+
+        public ActionResult Index3()
+        {
+            return View(db.DICHVU_LINHKIEN.Where(m=>m.SoLuongTonKho<=15).ToList());
+        }
+
+        //Thêm vào phiếu sửa chữa session
         public ActionResult ThemVaoPhieuSC_Session(int id)
         {
             

@@ -20,6 +20,7 @@ namespace QuanLyGaraOto2.Controllers
             var pHIEUSUACHUAs = db.PHIEUSUACHUAs.Include(p => p.XE);
             return View(pHIEUSUACHUAs.ToList());
         }
+        
 
         // GET: PHIEUSUACHUAs/Details/5
         public ActionResult Details(int? id)

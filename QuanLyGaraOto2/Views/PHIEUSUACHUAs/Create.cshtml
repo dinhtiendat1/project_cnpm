@@ -8,7 +8,7 @@
 <h2>Create</h2>
 <h4>PHIEUSUACHUA</h4>
 <hr />
-@using (Html.BeginForm("CreateSessionXe", "PhieuSuaChuas",FormMethod.Post))
+@using (Html.BeginForm("CreateSessionXe", "PhieuSuaChuas", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -23,7 +23,6 @@
                     @Html.ValidationMessageFor(model => model.NgayThuTien, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.SoTienThu, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -31,7 +30,6 @@
                     @Html.ValidationMessageFor(model => model.SoTienThu, "", new { @class = "text-danger" })
                 </div>
             </div>
-
             <div class="form-group">
                 @Html.LabelFor(model => model.NgayTiepNhanXe, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">

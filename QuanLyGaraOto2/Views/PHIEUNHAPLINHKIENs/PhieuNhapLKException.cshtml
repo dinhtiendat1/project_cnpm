@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "PhieuNhapLKException";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>PhieuNhapLinhKien</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th colspan="2">
+            Tên nhà cung cấp: @ViewBag.NhaCungCap.TenNCC
+        </th>
+
+        <th colspan="2">
+            
+        </th>
+
+    </tr>
+</table>
+<h4>ViewBag.Message<a href="@Url.Action("create","ct_phieunhaplk")">Thêm linh kiện vào phiếu nhập</a></h4>

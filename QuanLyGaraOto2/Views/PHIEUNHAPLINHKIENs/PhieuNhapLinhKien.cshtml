@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "PhieuNhapLinhKien";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>PhieuNhapLinhKien</h2>
+
+<table class="table" border="1">
+    <tr>
+        <th colspan="2">
+            Tên nhà cung cấp: @ViewBag.NhaCungCap.TenNCC
+        </th>
+
+        <th colspan="2">
+
+        </th>
+
+    </tr>
+    <tr>
+        <th>
+            Tên linh kiện
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn giá
+        </th>
+        <th>
+            Thành tiền
+        </th>
+    </tr>
+     @foreach (var item in
+        (dynamic)ViewData["data"])
+    {
+        <tr>
+            <td>
+                @item.TenDV_LK
+            </td>
+            <td>
+                @item.SoLuong
+            </td>
+            <td>
+                @item.DonGia
+            </td>
+            <td>
+                @item.ThanhTien
+            </td>
+        </tr>
+    }
+
+</table>
+<h4><a href="@Url.Action("create","ct_phieunhaplk")">Thêm linh kiện vào phiếu nhập</a></h4>
+<h4><a href="@Url.Action("LuuPhieuNhapLinhKien","PhieuNhapLinhKiens")">Lưu phiếu nhập</a></h4>

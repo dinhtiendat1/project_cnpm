@@ -21,7 +21,11 @@ namespace QuanLyGaraOto2.Controllers
             return View(xEs.ToList());
         }
 
-
+        public ActionResult Index2()
+        {
+            var xEs = db.XEs.Include(x => x.HIEUXE).Where(x => x.TienNo != 0);
+            return View(xEs.ToList());
+        }
 
         // GET: XEs/Details/5
         public ActionResult Details(string id)

@@ -1,0 +1,43 @@
+﻿@model QuanLyGaraOto2.Models.CT_PHIEUNHAPLK
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CT_PHIEUNHAPLK</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DICHVU_LINHKIEN.TenDV_LK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DICHVU_LINHKIEN.TenDV_LK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PHIEUNHAPLINHKIEN.Ma_PhieuNLK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PHIEUNHAPLINHKIEN.Ma_PhieuNLK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

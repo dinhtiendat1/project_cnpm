@@ -129,8 +129,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CT_PHIEUNHAPLKController.cs" />
     <Compile Include="Controllers\DICHVU_LINHKIENController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PHIEUNHAPLINHKIENsController.cs" />
     <Compile Include="Controllers\PHIEUSUACHUAsController.cs" />
     <Compile Include="Controllers\XEsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -150,6 +152,7 @@
     <Compile Include="Models\QuanLyGaraOto2Context.cs" />
     <Compile Include="Models\QUYEN.cs" />
     <Compile Include="Models\TAIKHOAN.cs" />
+    <Compile Include="Models\TMP_CT_PHIEUNHAPLK.cs" />
     <Compile Include="Models\TMP_CT_PHIEUSC.cs" />
     <Compile Include="Models\XE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -230,6 +233,20 @@
     <Content Include="Views\DICHVU_LINHKIEN\Index.cshtml" />
     <Content Include="Views\DICHVU_LINHKIEN\Index2.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\SessionCreateException.cshtml" />
+    <Content Include="Views\CT_PHIEUNHAPLK\Create.cshtml" />
+    <Content Include="Views\CT_PHIEUNHAPLK\Delete.cshtml" />
+    <Content Include="Views\CT_PHIEUNHAPLK\Details.cshtml" />
+    <Content Include="Views\CT_PHIEUNHAPLK\Edit.cshtml" />
+    <Content Include="Views\CT_PHIEUNHAPLK\Index.cshtml" />
+    <Content Include="Views\PHIEUNHAPLINHKIENs\Create.cshtml" />
+    <Content Include="Views\PHIEUNHAPLINHKIENs\Delete.cshtml" />
+    <Content Include="Views\PHIEUNHAPLINHKIENs\Details.cshtml" />
+    <Content Include="Views\PHIEUNHAPLINHKIENs\Edit.cshtml" />
+    <Content Include="Views\PHIEUNHAPLINHKIENs\Index.cshtml" />
+    <Content Include="Views\PHIEUNHAPLINHKIENs\PhieuNhapLKException.cshtml" />
+    <Content Include="Views\PHIEUNHAPLINHKIENs\PhieuNhapLinhKien.cshtml" />
+    <Content Include="Views\DICHVU_LINHKIEN\Index3.cshtml" />
+    <Content Include="Views\XEs\Index2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

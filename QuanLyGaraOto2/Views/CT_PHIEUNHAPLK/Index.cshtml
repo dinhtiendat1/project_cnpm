@@ -1,0 +1,46 @@
+﻿@model IEnumerable<QuanLyGaraOto2.Models.CT_PHIEUNHAPLK>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DICHVU_LINHKIEN.TenDV_LK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHIEUNHAPLINHKIEN.Ma_PhieuNLK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DICHVU_LINHKIEN.TenDV_LK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PHIEUNHAPLINHKIEN.Ma_PhieuNLK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
