@@ -7,11 +7,12 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.XE.BienSo)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.XE.TenChuXe)
         </th>
@@ -25,34 +26,43 @@
             @Html.DisplayNameFor(model => model.SoTienThu)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.XE.TienNo)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.NgayTiepNhanXe)
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.XE.TenChuXe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgaySuaChua)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayThuTien)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoTienThu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayTiepNhanXe)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaPhieuSC }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaPhieuSC }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaPhieuSC })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.XE.BienSo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.XE.TenChuXe)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgaySuaChua)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayThuTien)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SoTienThu)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.XE.TienNo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NgayTiepNhanXe)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.MaPhieuSC }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaPhieuSC }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.MaPhieuSC })
+    </td>
+</tr>
 }
 
 </table>

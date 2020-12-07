@@ -1,0 +1,40 @@
+﻿@model IEnumerable<QuanLyGaraOto2.Models.DICHVU_LINHKIEN>
+
+@{
+    ViewBag.Title = "DichVu";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>DichVu</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDV_LK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDV_LK)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaDV_LK }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaDV_LK }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaDV_LK })
+        </td>
+    </tr>
+}
+
+</table>

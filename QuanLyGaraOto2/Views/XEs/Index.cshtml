@@ -20,6 +20,9 @@
             @Html.DisplayNameFor(model => model.HIEUXE.TenHX)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.BienSo)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.TenChuXe)
         </th>
         <th>
@@ -36,28 +39,34 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.HIEUXE.TenHX)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenChuXe)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiaChi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DienThoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TienNo)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BienSo }) |
-                @Html.ActionLink("Details", "Details", new { id = item.BienSo }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BienSo })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.HIEUXE.TenHX)
+    </td>
+    <th>
+        @Html.DisplayFor(model => item.BienSo)
+    </th>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenChuXe)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DiaChi)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DienThoai)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TienNo)
+    </td>
+    <td>
+        @*
+             @Html.ActionLink("Edit", "Edit", new { id = item.BienSo }) |
+        @Html.ActionLink("Details", "Details", new { id = item.BienSo }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.BienSo })
+        *@
+
+    </td>
+</tr>
     }
 
 </table>

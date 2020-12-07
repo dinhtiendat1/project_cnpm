@@ -19,7 +19,10 @@ namespace QuanLyGaraOto2.Controllers
         {
             return View(db.DICHVU_LINHKIEN.ToList());
         }
-
+        public ActionResult DichVu()
+        {
+            return View(db.DICHVU_LINHKIEN.Where(x =>x.SoLuongTonKho==null).ToList());
+        }
         public ActionResult Index3()
         {
             return View(db.DICHVU_LINHKIEN.Where(m=>m.SoLuongTonKho<=15).ToList());

@@ -247,6 +247,7 @@
     <Content Include="Views\PHIEUNHAPLINHKIENs\PhieuNhapLinhKien.cshtml" />
     <Content Include="Views\DICHVU_LINHKIEN\Index3.cshtml" />
     <Content Include="Views\XEs\Index2.cshtml" />
+    <Content Include="Views\DICHVU_LINHKIEN\DichVu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
