@@ -4,14 +4,15 @@
     ViewBag.Title = "Index2";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-
-<h2>Index2</h2>
-
-<p>
+<br />
+<br />
+<h1>Thêm dịch vụ, linh kiện</h1>
+<br />
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-   
+</p>*@
+<table class="table" style="margin-left:100px; width:90%">
+
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.TenDV_LK)
@@ -19,24 +20,32 @@
         <th>
             @Html.DisplayNameFor(model => model.DonGia)
         </th>
-        
-        <th></th>
+
+        <th>
+            Điều chỉnh
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.TenDV_LK)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonGia)
-        </td>
-        
-        <td>
-            @Html.ActionLink("Thêm vào phiếu sửa chữa", "ThemVaoPhieuSC_Session", new { id=item.MaDV_LK }) |
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDV_LK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
 
-        </td>
-    </tr>
-}
+            <td>
+                <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("ThemVaoPhieuSC_Session",new { id = item.MaDV_LK })';return false;"><i class="fa fa-plus" aria-hidden="true"></i></button>
+
+            </td>
+        </tr>
+    }
 
 </table>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <button class="btn btn-success pull-right" onclick="location.href='@Url.Action("Create")';return false;">Tạo mới dịch vụ, linh kiện</button>
+    </div>
+</div>

@@ -1,7 +1,8 @@
-namespace QuanLyGaraOto2.Models
+﻿namespace QuanLyGaraOto2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -14,6 +15,7 @@ namespace QuanLyGaraOto2.Models
 
         [Required]
         [StringLength(30)]
+        [DisplayName("Tên quyền")]
         public string TenQuyen { get; set; }
 
         public int MaTK { get; set; }

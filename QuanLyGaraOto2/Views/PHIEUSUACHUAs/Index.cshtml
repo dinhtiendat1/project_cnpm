@@ -4,12 +4,14 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
+<br />
+<br />
+<h1>Phiếu sửa chữa</h1>
+<br />
 
-<h2>Index</h2>
-
-<p>
+@*<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <table class="table">
     <tr>
         <th>
@@ -27,32 +29,43 @@
         <th>
             @Html.DisplayNameFor(model => model.NgayTiepNhanXe)
         </th>
-        <th></th>
+        <th>
+            Điều chỉnh
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.XE.TenChuXe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgaySuaChua)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayThuTien)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SoTienThu)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayTiepNhanXe)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaPhieuSC }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaPhieuSC }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaPhieuSC })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.XE.TenChuXe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySuaChua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayThuTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTienThu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTiepNhanXe)
+            </td>
+            <td>
+                <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Details",new { id = item.MaPhieuSC })';return false;" style="width:30px"><i class="fa fa-info" aria-hidden="true"></i></button>
+                <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Edit",new { id = item.MaPhieuSC })';return false;"><i class="fa fa-wrench" aria-hidden="true"></i></button>
+                <button data-toggle="modal" data-target=".bd-example-modal-sm" onclick="location.href='@Url.Action("Delete",new { id = item.MaPhieuSC })';return false;"><i class="fa fa-minus" aria-hidden="true"></i></button>
+
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.MaPhieuSC }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MaPhieuSC }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaPhieuSC })*@
+            </td>
+        </tr>
+
+    }
 
 </table>
+
+<button class="btn btn-success pull-right" onclick="location.href='@Url.Action("Create")';return false;">Tạo phiểu sửa chửa</button>
+

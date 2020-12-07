@@ -1,7 +1,8 @@
-namespace QuanLyGaraOto2.Models
+﻿namespace QuanLyGaraOto2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -19,6 +20,7 @@ namespace QuanLyGaraOto2.Models
         public short MaHX { get; set; }
 
         [StringLength(30)]
+        [DisplayName("Tên hiệu xe")]
         public string TenHX { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -14,6 +14,11 @@
         @Html.ActionLink("Create New", "Create")
     </p>
 *@
+<br />
+<br />
+<h1>Phiếu sửa chữa: @ViewBag.Xe.TenChuXe</h1>
+<br />
+<br />
 
 <table class="table" border="1">
     <tr>
@@ -41,7 +46,6 @@
         <th>
             Thành tiền
         </th>
-        <th></th>
     </tr>
     @foreach (var item in
         (dynamic)ViewData["data"])
