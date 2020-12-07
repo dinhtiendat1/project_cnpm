@@ -20,7 +20,21 @@ namespace QuanLyGaraOto2.Controllers
             var xEs = db.XEs.Include(x => x.HIEUXE).Where(x=>x.TienNo==0);
             return View(xEs.ToList());
         }
+       
+        public ActionResult ThanhToan(string id)
+        {
+            XE xe = db.XEs.FirstOrDefault(m =>m.BienSo == id);
+            double tienNo = (double)xe.TienNo;
+            xe.TienNo = 0;
+            db.Entry(xe).State = EntityState.Modified;
+            PHIEUSUACHUA phieuSuaChua = db.PHIEUSUACHUAs.FirstOrDefault(m =>m.BienSo==id);
+            phieuSuaChua.SoTienThu = tienNo;
+            phieuSuaChua.NgayThuTien = DateTime.Now;
+            db.Entry(phieuSuaChua).State = EntityState.Modified;
+            db.SaveChanges();
 
+            return RedirectToAction("index", "phieusuachuas");
+        }
         public ActionResult Index2()
         {
             var xEs = db.XEs.Include(x => x.HIEUXE).Where(x => x.TienNo != 0);

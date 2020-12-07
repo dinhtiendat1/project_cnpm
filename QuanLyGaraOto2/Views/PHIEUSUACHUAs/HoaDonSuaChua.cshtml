@@ -1,0 +1,69 @@
+﻿@model IEnumerable<QuanLyGaraOto2.Models.PHIEUSUACHUA>
+
+@{
+    ViewBag.Title = "Hóa đơn sửa chữa";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<h2>@ViewBag.title</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.XE.BienSo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.XE.TenChuXe)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySuaChua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayThuTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoTienThu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.XE.TienNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayTiepNhanXe)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.XE.BienSo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.XE.TenChuXe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySuaChua)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayThuTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoTienThu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.XE.TienNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTiepNhanXe)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.MaPhieuSC })
+
+            </td>
+        </tr>
+    }
+
+</table>

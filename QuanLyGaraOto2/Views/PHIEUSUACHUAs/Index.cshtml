@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<QuanLyGaraOto2.Models.PHIEUSUACHUA>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Phiếu sửa chữa";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.title</h2>
 
 
 <table class="table">
@@ -58,9 +58,9 @@
         @Html.DisplayFor(modelItem => item.NgayTiepNhanXe)
     </td>
     <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.MaPhieuSC }) |
-        @Html.ActionLink("Details", "Details", new { id = item.MaPhieuSC }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.MaPhieuSC })
+       
+        @Html.ActionLink("Details", "Details", new { id = item.MaPhieuSC })
+        
     </td>
 </tr>
 }

@@ -54,7 +54,7 @@
                                 <li><a href=@Url.Action("create", "xes")>Nhập thông tin xe mới</a></li>
                                 <li><a href="@Url.Action("index", "xes")">Xe từng vào xưởng</a></li>
                                 <li><a href="@Url.Action("index2", "xes")">Xe đang trong xưởng</a></li>
-                                <li><a href="@Url.Action("index", "phieusuachua")">Xem phiếu sửa chữa</a></li>
+                                <li><a href="@Url.Action("index", "phieusuachuas")">Xem phiếu sửa chữa</a></li>
                                 @if (Session["Xe"] == null)
                                 {
                                     <li><a href="@Url.Action("create","Phieusuachuas")">Tạo phiếu sửa chữa</a></li>
@@ -76,7 +76,7 @@
                         <li class="dropdown">
                             <a data-toggle="dropdown" href="" id="QLKD">Quản lý kinh doanh <span class="caret"></span></a>
                             <ul class="dropdown-menu navbar">
-                                <li><a href="QLKD.html">Danh sách hóa đơn sửa ô tô</a></li>
+                                <li><a href="@Url.Action("HoaDonSuaChua","PhieuSuaCHuas")">Hóa đơn sửa ô tô</a></li>
                                 <li><a href="@Url.Action("DichVu","DichVu_LinhKien")">Dịch vụ</a></li>
                                 <li><a href="@Url.Action("index","DichVu_LinhKien")">Linh kiện</a></li>
                             </ul>

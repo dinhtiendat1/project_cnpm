@@ -1,7 +1,8 @@
-namespace QuanLyGaraOto2.Models
+﻿namespace QuanLyGaraOto2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -16,10 +17,11 @@ namespace QuanLyGaraOto2.Models
         }
 
         [Key]
+        [DisplayName("Mã phiếu nhập LK")]
         public int Ma_PhieuNLK { get; set; }
-
+        [DisplayName("Ngày nhập")]
         public DateTime? NgayNhap { get; set; }
-
+        [DisplayName("Mã nhà cung cấp")]
         public short MaNCC { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

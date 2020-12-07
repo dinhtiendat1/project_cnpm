@@ -222,7 +222,6 @@
     <Content Include="Views\XEs\Index.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\Create.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\Delete.cshtml" />
-    <Content Include="Views\PHIEUSUACHUAs\Details.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\Edit.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\Index.cshtml" />
     <Content Include="Views\PHIEUSUACHUAs\SessionCreate.cshtml" />
@@ -248,6 +247,8 @@
     <Content Include="Views\DICHVU_LINHKIEN\Index3.cshtml" />
     <Content Include="Views\XEs\Index2.cshtml" />
     <Content Include="Views\DICHVU_LINHKIEN\DichVu.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\Details.cshtml" />
+    <Content Include="Views\PHIEUSUACHUAs\HoaDonSuaChua.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

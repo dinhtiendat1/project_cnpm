@@ -17,24 +17,31 @@ namespace QuanLyGaraOto2.Controllers
         // GET: PHIEUSUACHUAs
         public ActionResult Index()
         {
-            var pHIEUSUACHUAs = db.PHIEUSUACHUAs.Include(p => p.XE);
+            var pHIEUSUACHUAs = db.PHIEUSUACHUAs.Where(m => m.SoTienThu == 0).Include(p => p.XE);
             return View(pHIEUSUACHUAs.ToList());
         }
         
-
+        public ActionResult HoaDonSuaChua()
+        {
+            var pHIEUSUACHUAs = db.PHIEUSUACHUAs.Where(m => m.SoTienThu != 0).Include(p => p.XE);
+            return View(pHIEUSUACHUAs.ToList());
+        }
         // GET: PHIEUSUACHUAs/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PHIEUSUACHUA pHIEUSUACHUA = db.PHIEUSUACHUAs.Find(id);
-            if (pHIEUSUACHUA == null)
-            {
-                return HttpNotFound();
-            }
-            return View(pHIEUSUACHUA);
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //PHIEUSUACHUA pHIEUSUACHUA = db.PHIEUSUACHUAs.Find(id);
+            //if (pHIEUSUACHUA == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(pHIEUSUACHUA);
+
+            var result = db.CT_PHIEUSUACHUA.Where(x => x.MaPhieuSC == id);
+            return View(result);
         }
 
         // GET: PHIEUSUACHUAs/Create

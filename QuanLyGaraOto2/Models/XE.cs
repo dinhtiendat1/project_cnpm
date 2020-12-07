@@ -1,7 +1,8 @@
-namespace QuanLyGaraOto2.Models
+﻿namespace QuanLyGaraOto2.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -17,23 +18,27 @@ namespace QuanLyGaraOto2.Models
 
         [Key]
         [StringLength(20)]
+        [DisplayName("Biển số")]
         public string BienSo { get; set; }
-
+        [DisplayName("Mã hiệu xe")]
         public short MaHX { get; set; }
 
         [Required]
         [StringLength(40)]
+        [DisplayName("Tên chủ xe")]
         public string TenChuXe { get; set; }
 
         [StringLength(100)]
+        [DisplayName("Địa chỉ")]
         public string DiaChi { get; set; }
 
         [Required]
         [StringLength(15)]
+        [DisplayName("Điện thoại")]
         public string DienThoai { get; set; }
-
+        [DisplayName("Tiền nợ")]
         public double? TienNo { get; set; }
-
+        [DisplayName("Hiệu xe")]
         public virtual HIEUXE HIEUXE { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
